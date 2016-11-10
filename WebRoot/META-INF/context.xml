@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- the configuration of DBCP start -->
+	<Resource name="jdbc/tna"
+			  auth = "Container"
+			  type="javax.sql.DataSource"
+			  maxActive="5"
+			  maxIdle="3"
+			  maxWait="10000"
+			  username="root"
+			  password="5114122"
+			  driverClassName="com.mysql.jdbc.Driver"
+			  url="jdbc:mysql://localhost:3306/tna"/>
+			  
+	<!-- the configuration of DBCP end 
+    maxIdle，最大空闲数，超过空闲时间，数据库连 接将被标记为不可用，然后被释放。设为0表示无限制。
+    MaxActive，连接池的最大数据库连接数。设为0表示无限制。
+    maxWait ，最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示  无限制。
+	auth="Container"  把数据库连接池交给容器管理 
+	
+	autoReconnect=true&useUnicode=true&characterEncoding=gbk" 
+	autoReconnect是指当数据源断开的时候是否根据你设定的interval时间来自动重新连接，多发生在远程数据库，网络连接断开的时候
+	useUnicode是指，数据库的编码方式很多，传递数据的时候是否使用unicode编码来克服不同码式转换的时候的麻烦
+	characterEncoding是指要转换成的数据源的编码，比如数据库编码是UTF-8，那么你设定useUNICODE后，传递的时候数据的发送和接受都是以unicode码编码，然后转换成你所需要的GBK码
+          单位为毫秒
+	java:comp/env/
+     -->
+</Context>
